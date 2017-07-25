@@ -10,6 +10,8 @@ var users = require('./routes/users');
 const auth = require('./auth')
 var app = express();
 
+const dotenv = require('dotenv').config();
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
