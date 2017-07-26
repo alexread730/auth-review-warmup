@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-const auth = require('./auth')
+const auth = require('./auth/index.js')
 var app = express();
 
 const dotenv = require('dotenv').config();
@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/auth', auth )
+app.use('/auth', auth)
 app.use('/', index);
 app.use('/users', users);
 
