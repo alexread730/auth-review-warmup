@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 
 const auth = require('./auth/index.js')
 var app = express();
+const event = require('./routes/event');
 
 const dotenv = require('dotenv').config();
 
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/auth', auth)
+app.use('/event', event);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
